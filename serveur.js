@@ -20,7 +20,7 @@ app.get('/api', function (req, res) {
         args: [params.space_group,params.pointing_vector,params.ref_axis,params.polar_in,params.polar_out,params.angle,params.pointing_vector_x,params.pointing_vector_y,params.pointing_vector_z,params.ref_axis_x,params.ref_axis_y,params.ref_axis_z,params.database]
     };
       
-    const pathScript = path.resolve(__dirname, 'computer.py');
+    const pathScript = path.resolve(__dirname, 'public/python', 'computer.py');
 
     PythonShell.run(pathScript, options, function (err, results) {
         if (err) {

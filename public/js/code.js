@@ -27,7 +27,7 @@ function change_database_loudon(){
 }
 
 async function getData(name) {
-  return promise = axios.get(`./db/Point_Group_${database}/${name}`)
+  return promise = axios.get(`../db/Point_Group_${database}/${name}`)
   .then(function (response) {
     databaseJson = response.data;
     Promise.resolve(response.data)

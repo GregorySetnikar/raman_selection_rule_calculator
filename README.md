@@ -11,6 +11,8 @@ This software has been written during the PhD of Grégory SETNIKAR. It answer th
 The graphical interface is built as a web application using Node.js and classical web development tools (HTML5, CSS, JavaScript).
 Computations are done using Python 3 and all the results are plotted or saved in LaTeX. 
 
+The web application is temporarily available on http://raman.iroka.ovh.
+
 ## Installation
 
 In order to use this software you need the following librairies: 

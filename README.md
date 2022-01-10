@@ -16,7 +16,7 @@ Computations are done using Python 3 and all the results are plotted or saved in
 In order to use this software you need the following librairies: 
 
 - [Node.js](https://nodejs.org/en/)
-- [Python3](You can use any version of Python 3, it only requires the syntaxe of Python 3.)
+- [Python3](https://www.python.org/downloads/)
 - [Numpy](https://numpy.org)
 - [Sympy](https://www.sympy.org/en/index.html)
 
@@ -27,11 +27,14 @@ If you haven’t a proper installation of python and/or the following libraries 
 Once everything is set, clone this repository and open a shell in it. 
 Then you can install node modules typing:
 
+```
 npm install
-
+```
 Then you can run the program with:
 
+```
 node .\server.js
+```
 
 Server.js will generate the web app on the local port 8080, that you can listen on http://localhost:8080 with your standard web navigator.
 
@@ -41,7 +44,9 @@ You will find all the information in the section « Docs/How to Use » directly 
 
 ## Roadmap
 
-Standalone offline application are currently built (using the Electron framework).
+- Standalone offline application are currently built (using the Electron framework).
+- Add a leaks computation feature for every geometry
+- Add a visualization feature for every geometry 
 
 ## Contributing
 

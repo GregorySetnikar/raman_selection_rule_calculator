@@ -1,17 +1,16 @@
-<!DOCTYPE />
-</>
+<!DOCTYPE >
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-  <title>Raman Selection Rules Calculator -  About This</title>
+  <title>Raman Selection Rules Calculator -  Download</title>
 
   <link rel="stylesheet" href="../css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <link rel="shortcut icon" type="image/ico" href="../img/icon.ico"/>
 </head>
 
-<body id="corps_aboutThis">
-<script>
+<body id="corps_download">
+  <script>
     const themeName = localStorage.getItem('theme');
     if(themeName === null) {
       localStorage.setItem('theme', 'light-theme');
@@ -23,8 +22,8 @@
   </script>
   <nav class="navbar" id="navbar">
   <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
-        <img src="img/title.png" width="330" height="330">
+      <a class="navbar-item" href="../index.html">
+        <img src="../img/title.png" width="330" height="330">
       </a>
       <a role="button" id="burger_btn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu" onclick="burger_open()">
         <span aria-hidden="true"></span>
@@ -73,7 +72,7 @@
             <p class="control">
               <a class="button is-white" href="/download.html" id="download_windows">
                 <span class="icon">
-                  <img src="img/download-circle-outline.png"></img>
+                  <img src="../img/download-circle-outline.png"></img>
                 </span>
                 <span>Download</span>
               </a>
@@ -83,52 +82,48 @@
       </div>
     </div>
   </nav>
-  <p>
-    <br />
 
-  <div class="columns">
+	<div class="columns">
+	<div class="column is-narrow"></div>
+	<div class="column is-one-third">
 
-        <div class="column is-narrow">
+	<h1>Dependencies</h1>
 
-        </div>
-        <div class="column is-narrow">
+	In order to use this program you need to have python 3.x installed and accessible on your laptop (in your path environment variable). <br>
+	If you haven’t a proper installation of python and/or the following libraries the program will not compute anything, but the interface will still work. <br>
+	<h3>Library needed :</h3>
+	<ul>
+	  <li>Numpy</li>
+	  <li>Sympy</li>
+	</ul>
 
-        </div>
+	<h3>Windows</h3>
+	The easiest way is to install the scientific pre-pack <a href=https://www.anaconda.com/products/individual#Downloads">Anaconda</a> program. <br>
+	Or via pip : <pre><code>pip install numpy sympy</code> </pre> <br>
+
+	<h3>Mac/Linux</h3>
+	Via pip : <pre><code>pip install numpy sympy</code></pre>
+
+    </div>
+
+	<div class="column is-narrow"></div>
+
+	<div class="column is-half">
+
+		<h1>Download</h1>
+	
+		This section is still under construction …
+
+		<h2>Windows</h2>
     
-    <div class="column is-two-thirds">
-     
-      <h1> About this program: </h1>
-      <p>
-        This program compute raman selection rules depending on : <br>
-        <ol>
-          <li>The symmetry of the crystal  </li>
-          <li>The orientation of the crystal</li>
-          <li>The pointing vector</li>
-          <li>Polarization of your excitation/collection path</li>
-        </ol>
-        
-      </p>
-     <br>
-     <p>  The reference axis is needed to compute polarisation depending on the pointing vector. <br>
-      <img src= "../img/alert.png"> </img> It must be perpendicular to the pointing vector  <img src= "../img/alert.png"> </img>
-      </p>
-    
-      <br>
-      You can find more information about how to use this software in the "How to Use" rubric. <br>
+    Get the Windows executable <a href=https://www.mediafire.com/file/zvfmc5ziylbmgjm/Raman_Selection_Rules_Calculator.exe/file">here</a>. 
+		<h2>Mac</h2>
+		
+		<h2>Linux</h2>
 
-      <h1> Thanks: </h1>
-      
-      
-      Thank you Pierre JAMET for your smart tricks ! <br>
-      
-      Thank you users!
-      <h1> References: </h1>
-
-      Scattering of light by crystals by Hayes William and Loudon, Rodney 
-      <a href="https://www.amazon.fr/Scattering-Light-Crystals-William-Hayes/dp/0471031917">(buy on Amazon)</a> <br>
-      <a href="https://www.cryst.ehu.es">Bilbao crystallographic server</a> <br>
-    
-    
+	
+		</div>
+	</div>
 </div>
 
 
@@ -136,4 +131,4 @@
 
 </body>
 
-<//>
+</>

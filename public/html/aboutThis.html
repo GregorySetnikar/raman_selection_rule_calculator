@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE />
+</>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-  <title>Raman Selection Rules Calculator -  Help</title>
+  <title>Raman Selection Rules Calculator -  About This</title>
 
   <link rel="stylesheet" href="../css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <link rel="shortcut icon" type="image/ico" href="../img/icon.ico"/>
 </head>
-<body id="corps_help">
-  <script>
+
+<body id="corps_aboutThis">
+<script>
     const themeName = localStorage.getItem('theme');
     if(themeName === null) {
       localStorage.setItem('theme', 'light-theme');
@@ -22,8 +23,8 @@
   </script>
   <nav class="navbar" id="navbar">
   <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
-        <img src="img/title.png" width="330" height="330">
+      <a class="navbar-item" href="../index.html">
+        <img src="../img/title.png" width="330" height="330">
       </a>
       <a role="button" id="burger_btn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu" onclick="burger_open()">
         <span aria-hidden="true"></span>
@@ -72,7 +73,7 @@
             <p class="control">
               <a class="button is-white" href="download.html" id="download_windows">
                 <span class="icon">
-                  <img src="img/download-circle-outline.png"></img>
+                  <img src="../img/download-circle-outline.png"></img>
                 </span>
                 <span>Download</span>
               </a>
@@ -95,33 +96,44 @@
         </div>
     
     <div class="column is-two-thirds">
+     
+      <h1> About this program: </h1>
+      <p>
+        This program compute raman selection rules depending on : <br>
+        <ol>
+          <li>The symmetry of the crystal  </li>
+          <li>The orientation of the crystal</li>
+          <li>The pointing vector</li>
+          <li>Polarization of your excitation/collection path</li>
+        </ol>
+        
+      </p>
+     <br>
+     <p>  The reference axis is needed to compute polarisation depending on the pointing vector. <br>
+      <img src= "../img/alert.png"> </img> It must be perpendicular to the pointing vector  <img src= "../img/alert.png"> </img>
+      </p>
+    
+      <br>
+      You can find more information about how to use this software in the "How to Use" rubric. <br>
 
-      <h1>Basics</h1>
-      <ol>
-        <li>Choose your point group in the list </li>
-        <li>Choose your pointing vector</li>
-        <li>Choose a reference axis (this correspond to the vertical polarization axis)</li>
-        <li>Enter your polarizations</li>
-        <li>Choose the orientation of your sample with respect to the reference axis (the reference is fixed, the sample move) </li>
-        <li>Click on "Calculate"</li>
-        <li>Choose another polarization if you want and press again 'Calculate'</li>
-      </ol>
+      <h1> Thanks: </h1>
       
-      <dl>
-        <br>
-      <dt><b>NB :</b></dt>
-      <dd> Press 'Reset table' if you want to change point group or database! </dd>
-      <dd> You can save results in the menu </dd>
-      </dl>
+      
+      Thank you Pierre JAMET for your smart tricks ! <br>
+      
+      Thank you users!
+      <h1> References: </h1>
 
-      <div>
-        <img id="schema" src="../img/illustration.png">
-      </div>
-
+      Scattering of light by crystals by Hayes William and Loudon, Rodney 
+      <a href="https://www.amazon.fr/Scattering-Light-Crystals-William-Hayes/dp/0471031917">(buy on Amazon)</a> <br>
+      <a href="https://www.cryst.ehu.es">Bilbao crystallographic server</a> <br>
+    
+    
 </div>
 
 
 <script src="../js/code.js"></script>
 
 </body>
-</html>
+
+<//>

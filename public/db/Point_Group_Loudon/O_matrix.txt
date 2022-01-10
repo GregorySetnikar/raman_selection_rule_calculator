@@ -1,0 +1,62 @@
+\tilde{\gamma_k}^{A_{1}} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & a
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1E} = 
+\begin{pmatrix}
+b & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & -2b
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2E} = 
+\begin{pmatrix}
+-\sqrt{3}b & 0 & 0 \\
+0 & \sqrt{3}b & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1T_{1}} = 
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & c \\
+0 & -c & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2T_{1}} = 
+\begin{pmatrix}
+0 & 0 & c \\
+0 & 0 & 0 \\
+-c & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{3T_{1}} = 
+\begin{pmatrix}
+0 & c & 0 \\
+-c & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1T_{2}} = 
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & d \\
+0 & d & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2T_{2}} = 
+\begin{pmatrix}
+0 & 0 & d \\
+0 & 0 & 0 \\
+d & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{3T_{2}} = 
+\begin{pmatrix}
+0 & d & 0 \\
+d & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix};

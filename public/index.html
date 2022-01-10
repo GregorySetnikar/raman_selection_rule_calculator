@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <title>Raman Selection Rules Calculator</title>
+
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="shortcut icon" type="image/ico" href="img/icon.ico"/>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        packages: {'[+]': ['nicefrac']}
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.19/dist/katex.min.css" integrity="sha384-beuqjL2bw+6DBM2eOpr5+Xlw+jiH44vMdVQwKxV28xxpoInPHTVmSvvvoPq9RdSh" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.19/dist/katex.min.js" integrity="sha384-aaNb715UK1HuP4rjZxyzph+dVss/5Nx3mLImBe9b0EW4vMUkc1Guw4VRyQKBC0eG" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.19/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+      defer="renderMathInElement(document.body);"></script>
+
+
+</head>
+
+
+<body id="corps">
+  <script>
+    const themeName = localStorage.getItem('theme');
+    if(themeName === null) {
+      localStorage.setItem('theme', 'light-theme');
+    } else {
+      if(themeName == "dark-theme") {
+        document.body.classList.add('dark-theme');
+      }
+    }
+  </script>
+  <nav class="navbar" id="navbar">
+  <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="img/title.png" width="330" height="330">
+      </a>
+      <a role="button" id="burger_btn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu" onclick="burger_open()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+  </div>
+  
+    <div id="nav-menu" class="navbar-menu">
+      <div class="navbar-start">
+    
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="docs">
+            Docs
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_docs">
+            <a class="navbar-item" id="aboutThis" href="aboutThis.html">
+              About this program
+             </a> 
+            <a class="navbar-item" id="help" href="help.html">
+              How to use
+            </a>
+            <a class="navbar-item" id="aboutUs" href="aboutUs.html">
+              About Us
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="nav_util">
+            Utilities
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_util">
+           
+              <a onclick="print_matrix()" id="matrix_btn" class="navbar-item">Show Raman Tensor</a>
+              <a onclick="print_schema()" id="help_btn" class="navbar-item">Show Exemple</a>
+              <a onclick="dark()" id="dark_mode_btn" class="navbar-item">Light / Dark Mode</a>
+              <a onclick="change_database_bilbao()" id="db_btn_B" class="navbar-item">Use Bilbao Database</a>
+              <a onclick="change_database_loudon()" id="db_btn_L" class="navbar-item is-active">Use Loudon Database (default)</a>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            
+            <p class="control">
+              <a class="button" href="download.html" id="download_windows">
+                <span class="icon">
+                  <img src="img/download-circle-outline.png"></img>
+                </span>
+                <span>Download</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+  <div class="columns">
+    <div class="column is-narrow"></div>
+    <div class="column is-one-quarter">
+      <div class="field">
+        <label>Choose your space group</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="spaceg">
+              <option value="C1">C1</option>
+              <option value="C2">C2</option>
+              <option value="C2h">C2h</option>
+              <option value="C2v">C2v</option>
+              <option value="C3h">C3h</option>
+              <option value="C3">C3</option>
+              <option value="C3i">C3i</option>
+              <option value="C3v">C3v</option>
+              <option value="C4">C4</option>
+              <option value="C4h">C4h</option>
+              <option value="C4v">C4v</option>
+              <option value="C6">C6</option>
+              <option value="C6h">C6h</option>
+              <option value="C6v">C6v</option>
+              <option value="Ci">Ci</option>
+              <option value="Cs">Cs</option>
+              <option value="D2">D2</option>
+              <option value="D2d">D2d</option>
+              <option value="D2h">D2h</option>
+              <option value="D3">D3</option>
+              <option value="D3d">D3d</option>
+              <option value="D3h">D3h</option>
+              <option value="D4">D4</option>
+              <option value="D4h" selected>D4h</option>
+              <option value="D6">D6</option>
+              <option value="D6h">D6h</option>
+              <option value="O">O</option>
+              <option value="Oh">Oh</option>
+              <option value="S4">S4</option>
+              <option value="T">T</option>
+              <option value="Td">Td</option>
+              <option value="Th">Th</option>
+            </select>
+          </div>
+          <div class="icon is-left" id="cube">
+            <img src="./img/cube-outline.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Choose the light incidence direction</label> <br/>
+        <label>(i.e the Pointing Vector)</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="pointing_vector">
+              <option> a = (1,0,0) </option>
+              <option> b = (0,1,0) </option>
+              <option selected> c = (0,0,1) </option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="icon is-left" id="ray">
+            <img src="./img/ray-start-arrow.png">
+          </div>
+        </div>
+        <div id="custom-pointing-vector">
+          
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Choose a reference axis</label> <br/>
+        <label>(to compute polarizations vector)</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="ref_axis">
+              <option> a = (1,0,0) </option>
+              <option selected> b = (0,1,0) </option>
+              <option> c = (0,0,1) </option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="icon is-left" id="axis">
+            <img src="./img/axis-arrow.png">
+          </div>
+        </div>
+        <div id="custom-ref-axis"></div>
+      </div>
+
+      <div>
+        <label>Choose the incident polarization</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="polar_inc">
+              <option selected> Vertical </option>
+              <option> Horizontal </option>
+              <option> Circular Right </option>
+              <option> Circular Left </option>
+            </select>
+          </div>
+          <div class="icon is-left" id="rcw">
+            <img src="./img/axis-x-rotate-clockwise.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Choose the collection polarization</label>
+        <div class="control has-icons-left">
+          <div class="select">
+            <select id="polar_out">
+              <option selected> Vertical </option>
+              <option> Horizontal </option>
+              <option> Circular Right </option>
+              <option> Circular Left </option>
+            </select>
+          </div>
+          <div class="icon is-left" id="rccw">
+            <img src="./img/axis-y-rotate-clockwise.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Angle (in °)</label> <br/>
+        <label>(clockwise rotation of the sample around pointing vector)</label>
+        <div class="control">
+          <input id="angle" class="input" type="number" placeholder="" value="0" min="0" max="180">
+        </div>
+      </div>
+
+
+      <div class="buttons">
+        <button onclick="calcul()" id="calcul_btn" class="button is-success is-outlined">Calculate</button>
+        <button onclick="save_tex()" id="save_btn" class="button is-outlined is-info is-dark">Save</button>
+        <button onclick="reset_table()" id="reset_table" class="button is-danger is-outlined">Reset table</button>
+      </div>
+
+  
+    </div>
+
+    <div id="droite" class="column">
+      <table id="sortie" style="width:100%">
+      </table>
+      <table id="matrix" style="width:0%">
+        <tbody>
+          <tr></tr>
+        </tbody>
+      </table>
+      <div>
+        <img id="schema">
+      </div>
+
+
+    </div>
+
+
+
+
+    <script src="js/code.js"></script>
+</body>
+</html>
+

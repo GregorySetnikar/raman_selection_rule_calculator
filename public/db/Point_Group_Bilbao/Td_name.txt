@@ -1,0 +1,1 @@
+Configurations	A_1	E	E	T_2(x)	T_2(y)	T_2(z)

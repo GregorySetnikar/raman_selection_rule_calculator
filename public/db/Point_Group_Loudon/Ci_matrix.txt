@@ -1,0 +1,6 @@
+\tilde{\gamma_k}^{A_{g}} = 
+\begin{pmatrix}
+a & d & f \\
+e & b & h \\
+g & i & c
+\end{pmatrix}

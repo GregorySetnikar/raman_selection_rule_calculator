@@ -1,0 +1,27 @@
+\tilde{\gamma_k}^{A} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & b
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B(z)} = 
+\begin{pmatrix}
+c & d & 0 \\
+d & -c & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1E(x)} = 
+\begin{pmatrix}
+0 & 0 & e \\
+0 & 0 & f \\
+e & f & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2E(y)} = 
+\begin{pmatrix}
+0 & 0 & f \\
+0 & 0 & -e \\
+f & -e & 0
+\end{pmatrix};

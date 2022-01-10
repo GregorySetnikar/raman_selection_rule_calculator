@@ -1,0 +1,34 @@
+\tilde{\gamma_k}^{A_{1}} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & b
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B_{1}} = 
+\begin{pmatrix}
+c & 0 & 0 \\
+0 & -c & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B_{2}(z)} = 
+\begin{pmatrix}
+0 & d & 0 \\
+d & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{E(x)} = 
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & e \\
+0 & e & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{E(y)} = 
+\begin{pmatrix}
+0 & 0 & e \\
+0 & 0 & 0 \\
+e & 0 & 0
+\end{pmatrix};

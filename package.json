@@ -1,0 +1,25 @@
+{
+  "name": "raman_selection_rule_calculator",
+  "icon": "./icon.ico",
+  "version": "2.0.0",
+  "description": "This program allow users to compute Raman selections rules for any geometry of there setup.",
+  "main": "serveur.js",
+  "author": "Grégory Setnikar, Julien Samson",
+  "license": "ISC",
+  "dependencies": {
+    "buefy": "^0.8.20",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "katex": "^0.13.19",
+    "mathjax": "^3.1.4",
+    "mathjax-electron": "^3.0.0",
+    "mathjs": "^7.1.0",
+    "nodemon": "^2.0.7",
+    "numbers": "^0.7.0",
+    "polyfill-library": "^3.96.0",
+    "python-shell": "^3.0.0"
+  },
+  "devDependencies": {
+    "electron": "^16.0.6"
+  }
+}

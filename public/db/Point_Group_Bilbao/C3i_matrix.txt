@@ -1,0 +1,20 @@
+\tilde{\gamma_k}^{A_{g}} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & b
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1E_{g}} = 
+\begin{pmatrix}
+c & d & e \\
+d & -c & f \\
+e & f & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2E_{g}} = 
+\begin{pmatrix}
+d & -c & -f \\
+-c & -d & e \\
+-f & e & 0
+\end{pmatrix}

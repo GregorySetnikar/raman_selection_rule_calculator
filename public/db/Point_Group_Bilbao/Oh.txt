@@ -1,0 +1,4 @@
+#A1g	Eg	Eg	T2g	T2g	T2g
+a	0	0	b	0	0	-sqrt(3)*b	0	0	0	0	0	0	0	d	0	d	0
+0	a	0	0	b	0	0	sqrt(3)*b	0	0	0	d	0	0	0	d	0	0
+0	0	a	0	0	-2*b	0	0	0	0	d	0	d	0	0	0	0	0

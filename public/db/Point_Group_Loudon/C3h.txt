@@ -1,0 +1,4 @@
+#A'	1E"	2E"	1E'	2E'
+a c 0 0 0 d 0 0 -f i h 0 h -i 0
+-c a 0 0 0 f 0 0 d h -i 0 -i -h 0
+0 0 b e g 0 -g e 0 0 0 0 0 0 0

@@ -1,0 +1,5 @@
+Ag	Bg	1Eg	2Eg	
+0	0	f	e	
+0	0	f	e	
+0	0	f	e	
+0	0	f	e	

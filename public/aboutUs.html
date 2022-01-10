@@ -1,0 +1,147 @@
+<!DOCTYPE >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <title>Raman Selection Rules Calculator -  About Us</title>
+
+  <link rel="stylesheet" href="../css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link rel="shortcut icon" type="image/ico" href="../img/icon.ico"/>
+</head>
+
+<body id="corps_aboutUs">
+  <script>
+    const themeName = localStorage.getItem('theme');
+    if(themeName === null) {
+      localStorage.setItem('theme', 'light-theme');
+    } else {
+      if(themeName == "dark-theme") {
+        document.body.classList.add('dark-theme');
+      }
+    }
+  </script>
+  <nav class="navbar" id="navbar">
+  <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="img/title.png" width="330" height="330">
+      </a>
+      <a role="button" id="burger_btn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu" onclick="burger_open()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+  </div>
+  
+    <div id="nav-menu" class="navbar-menu">
+      <div class="navbar-start">
+    
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="docs">
+            Docs
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_docs">
+            <a class="navbar-item" id="aboutThis" href="aboutThis.html">
+              About this program
+             </a> 
+            <a class="navbar-item" id="help" href="help.html">
+              How to use
+            </a>
+            <a class="navbar-item" id="aboutUs" href="aboutUs.html">
+              About Us
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="nav_util">
+            Utilities
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_util">
+              <a onclick="dark()" id="dark_mode_btn" class="navbar-item">Light / Dark Mode</a>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            
+            <p class="control">
+              <a class="button is-white" href="download.html" id="download_windows">
+                <span class="icon">
+                  <img src="img/download-circle-outline.png"></img>
+                </span>
+                <span>Download</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <p>
+    <br />
+
+  <div class="columns">
+
+        <div class="column is-narrow">
+
+        </div>
+        <div class="column is-narrow">
+
+        </div>
+    
+    <div class="column is-two-thirds">
+     
+      <h1> Team: </h1>
+      
+	  We are academics and this software is licensed under the terms and conditions of the <a href="https://www.gnu.org/licenses/gpl-3.0."> GNU GPL license </a>.
+
+	  <h2><a  href = "mailto:gregory.setnikar@pm.me">
+		Grégory SETNIKAR :
+	   </a> </h2>
+
+	  <ul>
+        <li>Main developer of calculations part </li>
+        <li>Designer of the users interface</li>
+      </ul>
+      
+	  
+	  <h2><a  href = "mailto:juliensamson.pro@gmail.com">
+		Julien SAMSON : 
+	   </a></h2>
+
+	  <ul>
+        <li>Contributes its expertise in web development </li>
+        <li>Convert the application (Electron/NodeJs) to a standalone web server (NodeJs/Express) </li>
+      </ul>
+    
+	  <h2><a  href = "mailto:marie-aude.measson@neel.cnrs.fr">
+		Marie-Aude MÉASSON :
+		</a> </h2>
+
+	  <ul>
+        <li>Supervised the project </li>
+        <li>Provided her expertise in the Raman selection rules calculations</li>
+      </ul>
+
+      <h1>Contacts:</h1>
+      If you have any questions or suggestions about this software please contact: <br>
+      <a  href = "mailto:marie-aude.measson@neel.cnrs.fr">
+      Marie-Aude MÉASSON
+      </a> 
+      or 
+      <a  href = "mailto:gregory.setnikar@pm.me">
+       Grégory SETNIKAR
+      </a>
+      
+</div>
+
+
+<script src="../js/code.js"></script>
+
+</body>
+</>

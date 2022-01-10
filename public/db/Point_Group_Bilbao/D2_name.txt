@@ -1,0 +1,1 @@
+Configurations	A	B_1(z)	B_2(y)	B_3(x)

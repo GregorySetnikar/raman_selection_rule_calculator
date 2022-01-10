@@ -1,0 +1,139 @@
+<!DOCTYPE />
+</>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <title>Raman Selection Rules Calculator -  About This</title>
+
+  <link rel="stylesheet" href="../css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link rel="shortcut icon" type="image/ico" href="../img/icon.ico"/>
+</head>
+
+<body id="corps_aboutThis">
+<script>
+    const themeName = localStorage.getItem('theme');
+    if(themeName === null) {
+      localStorage.setItem('theme', 'light-theme');
+    } else {
+      if(themeName == "dark-theme") {
+        document.body.classList.add('dark-theme');
+      }
+    }
+  </script>
+  <nav class="navbar" id="navbar">
+  <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <img src="img/title.png" width="330" height="330">
+      </a>
+      <a role="button" id="burger_btn" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="nav-menu" onclick="burger_open()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+  </div>
+  
+    <div id="nav-menu" class="navbar-menu">
+      <div class="navbar-start">
+    
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="docs">
+            Docs
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_docs">
+            <a class="navbar-item" id="aboutThis" href="/aboutThis.html">
+              About this program
+             </a> 
+            <a class="navbar-item" id="help" href="/help.html">
+              How to use
+            </a>
+            <a class="navbar-item" id="aboutUs" href="/aboutUs.html">
+              About Us
+            </a>
+          </div>
+        </div>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" id="nav_util">
+            Utilities
+          </a>
+          <div class="navbar-dropdown is-boxed" id="buttons_util">
+              <a onclick="dark()" id="dark_mode_btn" class="navbar-item">Light / Dark Mode</a>
+          </div>
+          
+        </div>
+
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            
+            <p class="control">
+              <a class="button is-white" href="/download.html" id="download_windows">
+                <span class="icon">
+                  <img src="img/download-circle-outline.png"></img>
+                </span>
+                <span>Download</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <p>
+    <br />
+
+  <div class="columns">
+
+        <div class="column is-narrow">
+
+        </div>
+        <div class="column is-narrow">
+
+        </div>
+    
+    <div class="column is-two-thirds">
+     
+      <h1> About this program: </h1>
+      <p>
+        This program compute raman selection rules depending on : <br>
+        <ol>
+          <li>The symmetry of the crystal  </li>
+          <li>The orientation of the crystal</li>
+          <li>The pointing vector</li>
+          <li>Polarization of your excitation/collection path</li>
+        </ol>
+        
+      </p>
+     <br>
+     <p>  The reference axis is needed to compute polarisation depending on the pointing vector. <br>
+      <img src= "../img/alert.png"> </img> It must be perpendicular to the pointing vector  <img src= "../img/alert.png"> </img>
+      </p>
+    
+      <br>
+      You can find more information about how to use this software in the "How to Use" rubric. <br>
+
+      <h1> Thanks: </h1>
+      
+      
+      Thank you Pierre JAMET for your smart tricks ! <br>
+      
+      Thank you users!
+      <h1> References: </h1>
+
+      Scattering of light by crystals by Hayes William and Loudon, Rodney 
+      <a href="https://www.amazon.fr/Scattering-Light-Crystals-William-Hayes/dp/0471031917">(buy on Amazon)</a> <br>
+      <a href="https://www.cryst.ehu.es">Bilbao crystallographic server</a> <br>
+    
+    
+</div>
+
+
+<script src="../js/code.js"></script>
+
+</body>
+
+<//>

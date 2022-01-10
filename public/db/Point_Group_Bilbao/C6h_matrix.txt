@@ -1,0 +1,34 @@
+\tilde{\gamma_k}^{A_{g}} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & a & 0 \\
+0 & 0 & b
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1E_{1g}} = 
+\begin{pmatrix}
+0 & 0 & c \\
+0 & 0 & d \\
+c & d & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2E_{1g}} = 
+\begin{pmatrix}
+0 & 0 & -d \\
+0 & 0 & c \\
+-d & c & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{1E_{2g}} = 
+\begin{pmatrix}
+e & f & 0 \\
+f & -e & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{2E_{2g}} = 
+\begin{pmatrix}
+f & -e & 0 \\
+-e & -f & 0 \\
+0 & 0 & 0
+\end{pmatrix};

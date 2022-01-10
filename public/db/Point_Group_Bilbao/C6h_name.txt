@@ -1,0 +1,1 @@
+Configurations	A_g	1E_{1g}	2E_{1g}	1E_{2g}	2E_{2g}

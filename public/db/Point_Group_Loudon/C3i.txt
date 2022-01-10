@@ -1,0 +1,4 @@
+#Ag	1Eg	2Eg
+a c 0 d e f e -d -h
+-c a 0 e -d h -d -e f
+0 0 b g i 0 -i g 0

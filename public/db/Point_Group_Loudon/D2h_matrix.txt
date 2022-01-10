@@ -1,0 +1,27 @@
+\tilde{\gamma_k}^{A_{g}} = 
+\begin{pmatrix}
+a & 0 & 0 \\
+0 & b & 0 \\
+0 & 0 & c
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B_{1g}} = 
+\begin{pmatrix}
+0 & d & 0 \\
+e & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B_{2g}} = 
+\begin{pmatrix}
+0 & 0 & f \\
+0 & 0 & 0 \\
+g & 0 & 0
+\end{pmatrix};
+
+\tilde{\gamma_k}^{B_{3g}} = 
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & h \\
+0 & i & 0
+\end{pmatrix};

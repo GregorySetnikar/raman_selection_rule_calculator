@@ -1,0 +1,1 @@
+Configurations	A^{\prime}(x,y)	A^{\prime\prime}(z)

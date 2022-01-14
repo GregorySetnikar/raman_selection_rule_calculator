@@ -26,16 +26,15 @@ import glob
 import re
 import shutil
 import sys
-sys.setrecursionlimit(100000)
+#sys.setrecursionlimit(100000)
 
 
 import subprocess
 
-
-
 ############################################################################
 def calcul_algo():
 
+    #construct Matrix object from database
     def Build_Matrix():
         Tab = np.chararray((nb_tensors,3, 3),itemsize=12,unicode=True)
         k=0
@@ -49,8 +48,8 @@ def calcul_algo():
         for i in range(0,nb_tensors):
 
             globals()['tensor_'+str(i)]= Matrix([[sympify(Tab[i,0,0]),sympify(Tab[i,0,1]),sympify(Tab[i,0,2])],[sympify(Tab[i,0+1,0]),sympify(Tab[i,0+1,1]),sympify(Tab[i,0+1,2])],[sympify(Tab[i,0+2,0]),sympify(Tab[i,0+2,1]),sympify(Tab[i,0+2,2])]])
-            #print(globals()['tensor_'+str(i)])
 
+    #construct Pointing vecteur from interface  
     def Build_Pointing():
 
         if pointing_vector == "a = (1,0,0)":
@@ -59,8 +58,6 @@ def calcul_algo():
             pointing = Matrix([0,1,0])
         if pointing_vector == "c = (0,0,1)":
             pointing = Matrix([0,0,1])
-
-        #print(pointing)
         
         if pointing_vector == "Other":
             x=float(pointing_vector_x)
@@ -70,6 +67,7 @@ def calcul_algo():
         
         return pointing
 
+    #construct reference axis from interface
     def Build_Crystal():
 
         if ref_axis == "a = (1,0,0)":
@@ -87,6 +85,7 @@ def calcul_algo():
        
         return crystal
 
+    #verify if pointing vector is perpendicular to reference axis
     def verifypointing(pointing,crist_axis) :
         scalar = pointing.dot(crist_axis)
         bool = True
@@ -99,15 +98,14 @@ def calcul_algo():
         finally :
             return bool
 
-
+    #rotate a vector by theta around the pointing vector 
     def Rotate(polar,theta_d):
 
-        #theta= (theta_d*pi)/180
         theta = radians(theta_d)
 
         if pointing_vector == "a = (1,0,0)":
             mat_rot =  rot_axis1(theta)
-            #print(mat_rot)
+           
         elif pointing_vector == "b = (0,1,0)":
             mat_rot =  rot_axis2(theta)
         elif pointing_vector == "c = (0,0,1)":
@@ -125,37 +123,28 @@ def calcul_algo():
                     (ux*uy*(1-ct)+uz*st, uy*uy*(1-ct)+ct, uy*uz*(1-ct)-ux*st),
                     (ux*uz*(1-ct)-uy*st, uy*uz*(1-ct)+ux*st, uz*uz*(1-ct)+ct))
 
-            #lil = ((ux*ux- ux*ux*ct+ct, ux*uy-ux*uy*ct-uz*st, ux*uz-ux*uz*ct+uy*st),
-                #   (ux*uy-ux*uy*ct+uz*st, uy*uy-uy*uy*ct+ct, uy*uz-uy*uz*ct-ux*st),
-                    #  (ux*uz-ux*uz*ct-uy*st, uy*uz-uy*uz*ct+ux*st, uz*uz-uz*uz*ct+ct))
             mat_rot = Matrix(lil)
     
-        #print(mat_rot*polar)
         return mat_rot*polar
 
+    #selection rules coefficient calculation
     def Calcul_coeff(P_in,P_out):
         resultats = ""
         Tab = np.chararray((nb_tensors),itemsize=100,unicode=True)
-        #print(Tab)
+     
         for i in range(0,nb_tensors):
 
             a = simplify(abs(adjoint(P_out)*eval('tensor_{}'.format(str(i)))*P_in)**2)
             
             test_0= str(a[0,0])
-            #print("avant",test_0)
-            index_test_0 = test_0.find("e-")
+       
+            index_test_0 = test_0.find("e-") #used to avoid informatic error
             if index_test_0 != -1:
                 test_0=test_0.replace("e-","*0*")
-                #a = Matrix([0])
-            #b=str(simplify(N(a[0,0],5)))
+      
             b=str(simplify(N(test_0,5)))
             Tab[i] = b
-            #print("après",test_0)
-            #print("simplifié",b)
-            #resultats+= b
-            #if i < nb_tensors-1:
-             #   resultats+= "\t"
-        
+
         res_tab = sympify(Tab)
        
         return res_tab
@@ -309,15 +298,15 @@ def calcul_algo():
         Out_vector = "-" + In_vector
     config=In_vector+"("+Out_polar+","+In_polar+")"+Out_vector + " &"
 
+    #send results to js
     print(config)
     resultats_str = Calcul_coeff(vec_temp_1,vec_temp_2)
     resultats = latex(sympify(resultats_str))
     print(resultats)
- 
-    #print(vec_temp_1,vec_temp_2)
 
+
+#execution
 ############################################################################
 if __name__ == "__main__":
  
-    
     calcul_algo()

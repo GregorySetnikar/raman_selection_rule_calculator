@@ -90,6 +90,10 @@ h3 {
   font-weight: bold;
 }
 
+.padded{
+  padding-bottom: 1.5cm;
+}
+
 pre {
  color:#000;
  font-family:Consolas,"Liberation Mono",Courier,monospace;

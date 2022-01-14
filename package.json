@@ -14,7 +14,7 @@
     "mathjax": "^3.1.4",
     "mathjax-electron": "^3.0.0",
     "mathjs": "^7.1.0",
-    "nodemon": "^2.0.7",
+    "nodemon": "^2.0.15",
     "numbers": "^0.7.0",
     "polyfill-library": "^3.96.0",
     "python-shell": "^3.0.0"

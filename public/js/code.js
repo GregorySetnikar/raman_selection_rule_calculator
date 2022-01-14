@@ -1,6 +1,8 @@
-let database = "Loudon";
+let database = "Loudon"; //To set Loudon database by default
 
-let btn_theme = document.getElementById('dark_mode_btn');
+let btn_theme = document.getElementById('dark_mode_btn'); //To check the actual theme
+
+//Allow to swap between database and update the interface accordingly
 
 function change_database_bilbao(){
 
@@ -26,6 +28,8 @@ function change_database_loudon(){
   
 }
 
+
+//Allow to open the database
 async function getData(name) {
   return promise = axios.get(`../db/Point_Group_${database}/${name}`)
   .then(function (response) {
@@ -35,12 +39,12 @@ async function getData(name) {
 
 }
 
+
+//Function called when « Calculate » button is pressed
+//Extract interface value from html and the api (and therefore launch python program) and update table
 async function calcul() {
 
-    //let database = "Loudon";
     await check_spaceg_select(database)
-
-    //MathJax.typeset()
 
     let pointing_vector_x
     let pointing_vector_y 
@@ -102,10 +106,8 @@ async function calcul() {
       }
       else {
 
-        addResults(response.data);
-        //console.log(response.data);
-        MathJax.typeset();
-        //renderMathInElement(document.body);
+        addResults(response.data); //update Table
+        MathJax.typeset(); //render LaTeX
       }
      
     }).catch(function (error) {
@@ -114,7 +116,7 @@ async function calcul() {
 
   }
  
-
+//Check which spacegroup is selected and construct the Table accordingly
 async function check_spaceg_select(database) {
   let table = document.getElementById("sortie");
   let spg = document.getElementById("spaceg");
@@ -139,6 +141,7 @@ async function check_spaceg_select(database) {
   }
 }
 
+//Update Table
 function addResults(results_str) {
 
   let table = document.getElementById("sortie");
@@ -164,6 +167,7 @@ function addResults(results_str) {
   table.appendChild(row);
 }
 
+//Switch between dark and light mode
 function dark() {
   if(localStorage.getItem('theme') === null) {
     localStorage.setItem('theme', 'light-theme');
@@ -181,6 +185,7 @@ function dark() {
   }
 }
 
+//Initial theme
 function initTextTheme() {
     let link = document.getElementById("dark_mode_btn");
     if(document.body.classList.contains('dark-theme')) {
@@ -192,6 +197,7 @@ function initTextTheme() {
 
 initTextTheme();
 
+//Clear table
 function reset_table()
 {
   let table = document.getElementById("sortie");
@@ -216,7 +222,7 @@ if(refAxis != null)
   refAxis.addEventListener('change', () => { other(refAxis, customRefAxis, 'ref-axis-') });
 }
 
-
+//construct/destroy new box when "Other" is selected, allows custom vector values
 function other(select, div, id) {
     const return_char = document.createElement("label")
     return_char.innerHTML="<br/>"
@@ -245,6 +251,7 @@ function other(select, div, id) {
     }
 }
 
+//remove matrix
 function reset_table_matrix()
 {
   let table = document.getElementById("matrix");
@@ -253,6 +260,7 @@ function reset_table_matrix()
   }
 }
 
+//print matrix
 async function addMatrix(database) {
 
   let table = document.getElementById("matrix");
@@ -297,6 +305,7 @@ async function print_matrix()
 
 }
 
+//print help
 function print_schema()
 {
   let btn = document.getElementById("help_btn");
@@ -311,7 +320,8 @@ function print_schema()
     image.style.display = "none";
   }
 }
- 
+
+// save using tex format the table
 function save_tex(){
 
   let table = document.getElementById("sortie")
@@ -377,6 +387,7 @@ function save_tex(){
 
 }
 
+//for mobile users
 function burger_open()
 {
   burger_btn = document.getElementById("burger_btn");

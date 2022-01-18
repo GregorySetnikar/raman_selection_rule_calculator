@@ -35,8 +35,10 @@ async function getData(name) {
   .then(function (response) {
     databaseJson = response.data;
     Promise.resolve(response.data)
-  });
-
+  })
+  .catch(function (error) {
+    window.alert("This point group is not found!");
+});
 }
 
 
@@ -100,10 +102,47 @@ async function calcul() {
     const promise1 = axios.get(`api?space_group=${space_group}&pointing_vector=${pointing_vector}&ref_axis=${ref_axis}&polar_in=${polar_in}&polar_out=${polar_out}&angle=${angle}&pointing_vector_x=${pointing_vector_x}&pointing_vector_y=${pointing_vector_y}&pointing_vector_z=${pointing_vector_z}&ref_axis_x=${ref_axis_x}&ref_axis_y=${ref_axis_y}&ref_axis_z=${ref_axis_z}&database=${database}`,
     ).then(function (response) {
       
-      if(response.data[0] == "true") {
+      if(response.data[1] == "true") {
 
         window.alert("The Pointing vector is not perpendicular to polarization ! \n\nPlease change pointing vector or your reference axis");
       }
+      
+      else if(response.data[0] == "sg") {
+
+        window.alert("The space group is not defined !");
+
+      }
+
+      else if(response.data[0] == "pv") {
+
+        window.alert("This pointing vector is not allowed !");
+
+      }
+
+      else if(response.data[0] == "refaxis") {
+
+        window.alert("This reference axis is not allowed !");
+
+      }
+
+      else if(response.data[0] == "polar_in") {
+
+        window.alert("This incident polarisation is not allowed !");
+
+      }
+
+      else if(response.data[0] == "polar_out") {
+
+        window.alert("This collection polarisation is not allowed !");
+
+      }
+
+      else if(response.data[0] == "angle") {
+
+        window.alert("The angle is not a allowed value !");
+
+      }
+
       else {
 
         addResults(response.data); //update Table

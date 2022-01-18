@@ -8,6 +8,7 @@
   "license": "ISC",
   "dependencies": {
     "buefy": "^0.8.20",
+    "connect-flash": "^0.1.1",
     "electron-squirrel-startup": "^1.0.0",
     "express": "^4.17.1",
     "katex": "^0.13.19",

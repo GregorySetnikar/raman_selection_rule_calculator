@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const katex = require('katex');
-let {PythonShell} = require('python-shell')
+let {PythonShell} = require('python-shell');
+const { executionAsyncResource } = require('async_hooks');
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -24,8 +25,7 @@ app.get('/api', function (req, res) {
 
     PythonShell.run(pathScript, options, function (err, results) {
         if (err) {
-            console.error(err);
-            res.status(400).send('<h1>ERROR 400</h1>');
+           res.status(400).send('<h1>ERROR 400</h1>');
         } else {
             res.json(results);
         }

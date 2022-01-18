@@ -151,6 +151,53 @@ def calcul_algo():
     
  
     #get parameter from UI
+
+    try:
+        space_group = sys.argv[1]
+        list_group = ["C1","C2","C2h","C2v","C3h","C3","C3i","C3v","C4","C4h","C4v","C6","C6h","C6v","Ci","Cs","D2","D2d","D2h","D3","D3d","D3d","D4","D4h","D6","D6h","O","Oh","S4","T","Td","Th"]
+        assert space_group in list_group
+    except AssertionError:
+        print("sg")
+        return
+
+    try:
+        pointing_vector = sys.argv[2]
+        allowed_values = ["a = (1,0,0)","b = (0,1,0)","c = (0,0,1)","Other"]
+        assert pointing_vector in allowed_values
+    except AssertionError:
+        print("pv")
+        return
+    try:
+        ref_axis = sys.argv[3]
+        allowed_values = ["a = (1,0,0)","b = (0,1,0)","c = (0,0,1)","Other"]
+        assert ref_axis in allowed_values
+    except AssertionError:
+        print("refaxis")
+        return
+
+    try:
+        polar_in = sys.argv[4]
+        allowed_values = ["Vertical","Horizontal","Circular Right","Circular Left"]
+        assert polar_in in allowed_values
+    except AssertionError:
+        print("polar_in")
+        return
+
+    try:
+        polar_out = sys.argv[5]
+        allowed_values = ["Vertical","Horizontal","Circular Right","Circular Left"]
+        assert polar_out in allowed_values
+    except AssertionError:
+        print("polar_out")
+        return
+
+    try:
+        angle = sys.argv[6]
+        float(angle)
+    except ValueError:
+        print("angle")
+        return
+    
     space_group = sys.argv[1]
     pointing_vector = sys.argv[2]
     ref_axis = sys.argv[3]
@@ -167,6 +214,10 @@ def calcul_algo():
     ref_axis_z = sys.argv[12]
 
     database = sys.argv[13]
+
+
+
+
     point_group_str=""
 
     if (database == "Loudon"):

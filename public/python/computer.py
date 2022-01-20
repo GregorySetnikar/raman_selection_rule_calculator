@@ -52,11 +52,11 @@ def calcul_algo():
     def Build_Pointing():
 
         if pointing_vector == "a = (1,0,0)":
-            pointing = Matrix([1,0,0])
+            pointing = Matrix([-1,0,0])
         if pointing_vector == "b = (0,1,0)":
-            pointing = Matrix([0,1,0])
+            pointing = Matrix([0,-1,0])
         if pointing_vector == "c = (0,0,1)":
-            pointing = Matrix([0,0,1])
+            pointing = Matrix([0,0,-1])
         
         if pointing_vector == "Other":
             x=float(pointing_vector_x)
@@ -257,7 +257,8 @@ def calcul_algo():
     #build polar ref
     vec_global_V = crist_axis/crist_axis.norm()
     #print(vec_global_V)
-    vec_global_H_temp = vec_global_V.cross(pointing)
+    #vec_global_H_temp = vec_global_V.cross(pointing)
+    vec_global_H_temp = pointing.cross(vec_global_V)
     vec_global_H = vec_global_H_temp/vec_global_H_temp.norm()
 
     R_c= 1/sqrt(2)*Matrix([1,-I,0])
@@ -344,9 +345,9 @@ def calcul_algo():
         In_vector = "(" + pointing_vector_x +"," + pointing_vector_y + "," + pointing_vector_z + ")"
         Out_vector =  "(-" + pointing_vector_x +", -" + pointing_vector_y + ", -" + pointing_vector_z + ")"
     else:  
-        In_vector=pointing_vector[0] 
-        Out_vector = "-" + In_vector
-    config=In_vector+"("+Out_polar+","+In_polar+")"+Out_vector + " &"
+        Out_vector=pointing_vector[0] 
+        In_vector = "-" + Out_vector
+    config=In_vector+"("+In_polar+","+Out_polar+")"+Out_vector + " &"
 
     #send results to js
     print(config)

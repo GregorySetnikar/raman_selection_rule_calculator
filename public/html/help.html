@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
   <title>Raman Selection Rules Calculator -  Help</title>
-
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <link rel="stylesheet" href="../css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <link rel="shortcut icon" type="image/ico" href="../img/icon.ico"/>
@@ -98,11 +99,13 @@
 
       <h1>Basics</h1>
       <ol>
-        <li>Choose your point group in the list </li>
-        <li>Choose your pointing vector</li>
-        <li>Choose a reference axis (this correspond to the vertical polarization axis with an angle of 0°)</li>
-        <li>Enter your polarizations</li>
-        <li>Choose the orientation of your sample with respect to the reference axis (the reference is fixed, the polarizations move) </li>
+        <li>By default the database is the Loudon’s one. <br> You can choose to change database in "Utilities".  </li>
+        <li>Choose your point group in the list. </li>
+        <li>You can verify and print Raman matrix in "Utilities" <br> To reset printing of matrix when you change point group or database, hide and show matrix again. </li>
+        <li>Choose the direction of the pointing vector \(\vec{\Pi}_{inc}\) . <br> When you choose a crystallographic axis as a direction, calculation will be done with "minus the axis" as incident vector (see illustration on the right). <br> If you choose "Other", it will take exactly the input as a pointing vector.</li>
+        <li>Choose a reference axis, it must be perpendicular to the pointing vector  \(\vec{\Pi}_{inc}\). <br> This reference will be used as the vertical polarization axis with an angle of 0°. <br> The horizontal polarization will be compute as  \(\vec{H}_{0^{\circ}}=\vec{\Pi}_{inc}\times\vec{V}_{0^{\circ}}\)</li>
+        <li>Enter your polarizations (vertical, horizontal, circular left or right)</li>
+        <li>Choose the angle of rotation of polarizations with respect to the reference axis (the reference is fixed, the polarizations move). <br> The angle is in degree (not radians) and the rotation is taken clockwise. </li>
         <li>Click on "Calculate"</li>
         <li>Choose another polarization if you want and press again 'Calculate'</li>
       </ol>
@@ -111,10 +114,15 @@
         <br>
       <dt><b>NB :</b></dt>
       <dd> Press 'Reset table' if you want to change point group or database! </dd>
-      <dd> You can save results in LaTeX format </dd>
+      <dd> You can save results in \(\LaTeX\) format (you will need tabular and adjustbox package in your document)</dd>
       </dl>
 
-      <h1> Notations </h1>
+      
+</div>
+
+<div class="column is-half">
+
+  <h1> Notations </h1>
      
      <dd> Results are presented using Porto notation as a(bc)d with : </dd>  <br>
       <ol>
@@ -123,10 +131,11 @@
         <li> c the scattered polarization</li>
         <li> d the scattered light direction</li>
       </ol>
-</div>
 
-<div class="column is half">
-  <img id="schema" src="../img/illustration.png" height="450" width="450">
+  <center>
+    <img id="schema" src="../img/illustration.png" height="450" width="450">
+  </center>
+ 
 </div>
 
 <script src="../js/code.js"></script>

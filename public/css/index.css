@@ -117,6 +117,7 @@ code {
 
 li {
   list-style-type: circle;
+  padding-bottom: 0.15cm;
 }
 
 .select

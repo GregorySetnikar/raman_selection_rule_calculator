@@ -408,7 +408,7 @@ function save_tex(){
     number_col+= "c|"
    }
 
-  result_str = "\\begin{table}[H] \n \\centering \n \\begin{adjustbox}{max width=\\textwidth} \n \\begin{tabular}{" + number_col +"}\n \\toprule \n" + result_str + "\\bottomrule \n \\end{tabular} \n \\end{adjustbox} \n \\caption{} \n \\label{} \n \\end{table}"
+  result_str = "\\begin{table}[H] \n \\centering \n \\begin{adjustbox}{max width=\\textwidth} \n \\begin{tabular}{" + number_col +"}\n \\toprule \n" + result_str + "\\bottomrule \n \\end{tabular} \n \\end{adjustbox} \n \\caption{Raman selection rules for the space group  . Calculation are from G.Setnikar et al. \\cite{G.Setnikar et al}} \n \\label{} \n \\end{table}"
   
   const downloadToFile = (content, filename, contentType) => {
     const a = document.createElement('a');

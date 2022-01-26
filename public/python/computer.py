@@ -149,7 +149,7 @@ def calcul_algo():
         return res_tab
     
  
-    #get parameter from UI
+    #block unallowed parameter from UI
 
     try:
         space_group = sys.argv[1]
@@ -197,6 +197,9 @@ def calcul_algo():
         print("angle")
         return
     
+
+    #get parameter from UI
+
     space_group = sys.argv[1]
     pointing_vector = sys.argv[2]
     ref_axis = sys.argv[3]
@@ -256,8 +259,7 @@ def calcul_algo():
         print("false")
     #build polar ref
     vec_global_V = crist_axis/crist_axis.norm()
-    #print(vec_global_V)
-    #vec_global_H_temp = vec_global_V.cross(pointing)
+
     vec_global_H_temp = pointing.cross(vec_global_V)
     vec_global_H = vec_global_H_temp/vec_global_H_temp.norm()
 
